@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Your budget calculator content here -->
+
+    <script src="destination.html"></script>
+  <title>Top Nomad-Friendly Destinations</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <style>
+
+    nav ul {
+    display: flex;
+    justify-content: center; /* Items ko center kare */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    position: fixed;       /* Header ko screen pe fix kare */
+    top: 0;
+    left: 0;
+    width: 100%;           /* Full width */
+    background-color: white; /* Background fix taake content ke sath merge na ho */
+    z-index: 1000;         /* Content ke upar rahe */
+    border-bottom: 1px solid #ddd; /* Thoda shadow effect */
+}
+
+/* Body ke content ko neeche push kare taake header se overlap na ho */
+body {
+    margin-top: 60px; /* Header ki height ke barabar */
+}
+
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main-content h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #34495e;
+      margin-bottom: 2rem;
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin: 1rem;
+      color: #2c3e50;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 0 1rem 1rem;
+    }
+
+    #map {
+      width: 100%;
+      height: 500px;
+      margin-top: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #e9ecef;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="digitaltourMain.html">Home</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="Gear and tools.html">Gear & Tools</a></li>
+            <li><a href="Health and well-being.html">Health & Well-being</a></li>
+            <li><a href="Budget calculator.html">Budget Calculator</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <h2>Top Nomad-Friendly Cities</h2>
+
+    <div class="destinations-grid">
+  <a href="/pages/bali.html" class="card">
+    <img src="bali.jpg" alt="Bali, Indonesia" />
+    <h3>Bali, Indonesia</h3>
+    <p>Affordable living, tropical paradise, and vibrant coworking culture.</p>
+  </a>
+
+  <a href="/pages/lisbon.html" class="card">
+    <img src="lisbon.jpg" alt="Lisbon, Portugal" />
+    <h3>Lisbon, Portugal</h3>
+    <p>Sunny climate, excellent cafes, and a strong digital community.</p>
+  </a>
+
+  <a href="/pages/thailand.html" class="card">
+    <img src="chaingmi.jpg" alt="Chiang Mai, Thailand" />
+    <h3>Chiang Mai, Thailand</h3>
+    <p>Peaceful lifestyle, cheap rent, and growing tech scene.</p>
+  </a>
+
+  <a href="/pages/mexico.html" class="card">
+    <img src="mexico.jpg" alt="Mexico City, Mexico" />
+    <h3>Mexico City, Mexico</h3>
+    <p>Great food, good infrastructure, and easy visa policies.</p>
+  </a>
+
+  <a href="/pages/budapest.html" class="card">
+    <img src="Hungary.jpg" alt="Budapest, Hungary" />
+    <h3>Budapest, Hungary</h3>
+    <p>Fast internet, great value, and stunning architecture.</p>
+  </a>
+
+  <a href="/pages/coloumbia.html" class="card">
+    <img src="coloumbia.jpg" alt="Medellín, Colombia" />
+    <h3>Medellín, Colombia</h3>
+    <p>Perfect weather, scenic views, and a growing expat scene.</p>
+  </a>
+</div>
+
+    <h2>Explore on Map</h2>
+    <div id="map"></div>
+  </section>
+
+ <footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 2rem;">
+  <p>© 2025 Digital Nomad Life. All rights reserved.</p>
+  <p>
+    <a href="mailto:contact@nomadlife.com" style="color: #fff; text-decoration: underline;">contact@nomadlife.com</a>
+  </p>
+</footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map('map').setView([20, 0], 2); // Global center
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Array of destination data
+    const cities = [
+      {
+        name: "Bali, Indonesia",
+        lat: -8.4095,
+        lng: 115.1889,
+        desc: "Tropical paradise and coworking culture"
+      },
+      {
+        name: "Lisbon, Portugal",
+        lat: 38.7169,
+        lng: -9.1399,
+        desc: "Sunny climate and strong digital community"
+      },
+      {
+        name: "Chiang Mai, Thailand",
+        lat: 18.7961,
+        lng: 98.9791,
+        desc: "Peaceful lifestyle and tech scene"
+      },
+      {
+        name: "Mexico City, Mexico",
+        lat: 19.4326,
+        lng: -99.1332,
+        desc: "Great food and visa flexibility"
+      },
+      {
+        name: "Budapest, Hungary",
+        lat: 47.4979,
+        lng: 19.0402,
+        desc: "Fast internet and beautiful architecture"
+      },
+      {
+        name: "Medellín, Colombia",
+        lat: 6.2442,
+        lng: -75.5812,
+        desc: "Perfect weather and expat scene"
+      }
+    ];
+
+    // Add markers
+    cities.forEach(city => {
+      L.marker([city.lat, city.lng])
+        .addTo(map)
+        .bindPopup(`<strong>${city.name}</strong><br>${city.desc}`);
+    });
+  </script>
+</body>
+</html>

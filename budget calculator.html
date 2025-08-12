@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="budget calculator.css">
+
+</head>
+<body>
+<body>
+    
+   <!-- header.html -->
+<nav>
+    <ul>
+        <li><a href="digitaltourMain.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="Gear and tools.html">Gear & Tools</a></li>
+        <li><a href="Health and well-being.html">Health & Well-being</a></li>
+        <li><a href="budget calculator.html">Budget Calculator</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+    </ul>
+</nav>
+    <script src="budget calculator.js"></script>
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h1 class="title"><i class="fas fa-calculator"></i> Budget Calculator</h1>
+
+        <div class="input-group income">
+            <label for="income">Monthly Income ($):</label>
+            <input type="number" id="income" value="0" min="0">
+        </div>
+
+        <div class="expenses-container">
+            <h2>Expenses</h2>
+            <div class="input-group">
+                <label for="rent">Rent ($):</label>
+                <input type="number" id="rent" value="0" min="0">
+            </div>
+            <div class="input-group">
+                <label for="food">Food ($):</label>
+                <input type="number" id="food" value="0" min="0">
+            </div>
+            <div class="input-group">
+                <label for="wifi">WiFi ($):</label>
+                <input type="number" id="wifi" value="0" min="0">
+            </div>
+        </div>
+        
+        <div class="results-container">
+            <div class="result-box total-expenses">
+                <span>Total Expenses:</span>
+                <span id="total-expenses-display">$0.00</span>
+            </div>
+            <div class="result-box balance">
+                <span>Remaining Balance:</span>
+                <span id="balance-display" class="positive">$0.00</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="budget calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.calculator {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.calculator label {
+    display: block;
+    margin-top: 15px;
+}
+
+.calculator input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.calculator button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.calculator h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+nav {
+    position: fixed;       /* Header ko screen pe fix kare */
+    top: 0;
+    left: 0;
+    width: 100%;           /* Full width */
+    background-color: white; /* Background fix taake content ke sath merge na ho */
+    z-index: 1000;         /* Content ke upar rahe */
+    border-bottom: 1px solid #ddd; /* Thoda shadow effect */
+}
+
+/* Body ke content ko neeche push kare taake header se overlap na ho */
+body {
+    margin-top: 60px; /* Header ki height ke barabar */
+}
+
+
+:root {
+    --primary-color: #5B21B6;
+    --primary-color-dark: #4C1D95;
+    --background-color: #F3F4F6;
+    --card-background: #FFFFFF;
+    --text-color: #1F2937;
+    --light-text-color: #6B7280;
+    --border-color: #E5E7EB;
+    --success-color: #10B981;
+    --danger-color: #EF4444;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+.calculator-container {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.title .fas {
+    margin-right: 10px;
+}
+
+.expenses-container h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--primary-color-dark);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--light-text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(91, 33, 182, 0.1);
+}
+
+.results-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.result-box {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.result-box span:first-child {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 5px;
+}
+
+.result-box span:last-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.balance .positive {
+    color: var(--success-color);
+}
+
+.balance .negative {
+    color: var(--danger-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+    .calculator-container {
+        padding: 30px 20px;
+    }
+    .results-container {
+        flex-direction: column;
+    }
+}

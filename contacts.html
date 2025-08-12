@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="digitaltourMain.html">Home</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="Gear and tools.html">Gear & Tools</a></li>
+            <li><a href="Health and well-being.html">Health & Well-being</a></li>
+            <li><a href="Budget calculator.html">Budget Calculator</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script src="contacts.js"></script>
+    <title>Contact Us - Digital Tour</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="contacts.css ">
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col items-center w-full">
+        <!-- Header -->
+        <header class="w-full header-bg py-5 px-6 md:px-8 rounded-b-xl mb-10">
+            <div class="max-w-4xl mx-auto flex justify-center items-center">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                    Contact Us
+                </h1>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-grow w-full max-w-4xl container-padding">
+
+            <!-- Introduction Section -->
+            <section class="text-center mb-12 section-card">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get in Touch with Digital Tour</h2>
+                <p class="text-lg text-intro leading-relaxed max-w-2xl mx-auto">
+                    We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, use the form below or connect with us on social media.
+                </p>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="section-card p-8">
+                <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">Send Us a Message</h3>
+                <form id="contactForm" action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" name="name" required class="form-input" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                        <input type="email" id="email" name="email" required class="form-input" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@example.com)">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <select id="subject" name="subject" required class="form-input">
+                            <option value="">-- Please select a subject --</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="feedback">Feedback / Suggestion</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="media-inquiry">Media Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required class="form-input form-textarea" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                        <label for="newsletter" class="ml-2 block text-sm text-gray-900">Sign me up for the newsletter!</label>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </section>
+
+            <!-- Other Contact Options Section -->
+            <section class="section-card p-8">
+                <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">Other Ways to Connect</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div>
+                        <h4 class="font-semibold text-xl text-gray-800 mb-3">Email Us Directly</h4>
+                        <p class="text-gray-700 mb-2">For general inquiries:</p>
+                        <a href="mailto:info@digitalnomadlife.com" class="text-blue-600 hover:underline font-medium">info@digitaltour.com</a>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl text-gray-800 mb-3">Follow Us on Social Media</h4>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <a href="#" aria-label="Facebook">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14 13.5h2.5l1-4H14V6.75c0-.621.5-1.25 1.25-1.25h1.5V2.14c-.232-.033-.94-.122-2.14-.122-2.488 0-4.16 1.503-4.16 4.25v2.375H7.5v4H10V22h4v-8.5z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.666 4.92 4.918.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.666 4.772-4.918 4.92-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.772-1.666-4.92-4.918-.058-1.265-.07-1.645-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.666-4.772 4.918-4.92 1.265-.058 1.645-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072C3.12 0.36 1.66 1.82 1.51 5.093c-.058 1.28-.07 1.687-.07 4.947s.014 3.667.072 4.947c.148 3.273 1.608 4.733 4.88 4.88 1.28.058 1.687.07 4.947.07s3.667-.014 4.947-.072c3.273-.148 4.733-1.608 4.88-4.88.058-1.28.07-1.687.07-4.947s-.014-3.667-.072-4.947c-.148-3.273-1.608-4.733-4.88-4.88-1.28-.058-1.687-.07-4.947-.07zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6c-.77.34-1.6.56-2.46.66.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.5 7.5 3.6 4.88c-.36.62-.56 1.35-.56 2.14 0 1.48.75 2.79 1.91 3.56-.69-.02-1.34-.21-1.91-.53v.03c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.71 2.14 2.95 4.03 2.99C13.07 18.25 10.85 19 8.5 19c-.46 0-.91-.03-1.36-.08 2.29 1.47 5.02 2.33 7.96 2.33 9.55 0 14.78-7.92 14.78-14.78 0-.22-.01-.44-.01-.66.99-.72 1.84-1.62 2.51-2.65z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full footer-bg py-6 px-6 md:px-8 mt-10 rounded-t-xl">
+            <div class="max-w-4xl mx-auto text-center text-white text-sm">
+                &copy; 2025 Digital Tour. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Custom JavaScript Link -->
+    <script src="contacts.js"></script>
+</body>
+</html>

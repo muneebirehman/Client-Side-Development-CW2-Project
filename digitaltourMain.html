@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1 class="page-title">Welcome To Digital Tour</h1>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+ <nav>
+        <ul>
+            <li><a href="digitaltourMain.html">Home</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="Gear and tools.html">Gear & Tools</a></li>
+            <li><a href="Health and well-being.html">Health & Well-being</a></li>
+            <li><a href="Budget calculator.html">Budget Calculator</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+
+  <style>
+    nav {
+  position: fixed; /* Keeps the navbar at the top when you scroll */
+  top: 0;
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow below navbar */
+  z-index: 10; /* Keeps navbar above other content */
+}
+
+nav ul {
+  justify-content: center; /* Center menu items horizontally */
+  padding: 1rem;
+  margin: 0;
+  list-style: none; /* Removes bullets */
+  gap: 2rem; /* Space between menu items */
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none; /* No underline on links */
+  color: #2c3e50; /* Dark blue-ish text color */
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+      z-index: 0;
+    }
+
+    .full-screen {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 1rem;
+      overflow: hidden;
+    }
+
+    .carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .scroll-text {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #top-destinations {
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    #top-destinations h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fefefe;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 1rem;
+      font-size: 1.25rem;
+      color: #34495e;
+    }
+
+    .card p {
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .scroll-text {
+        font-size: 1.5rem;
+      }
+
+      .card img {
+        height: 150px;
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      margin: 0;
+      list-style: none;
+      gap: 2rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <section id="home" class="full-screen">
+    <div class="carousel">
+      <img src="travel1.jpg" alt="Travel 1" class="active" />
+      <img src="travel2.jpg" alt="Travel 2" />
+      <img src="travel3.jpg" alt="Travel 3" />
+    </div>
+
+    <div class="gradient-overlay"></div>
+
+    <div class="banner">
+      <h1 class="scroll-text">Work, Travel, and Live Anywhere</h1>
+      <p class="scroll-text">Explore the freedom of the digital nomad lifestyle.</p>
+    </div>
+  </section>
+
+  <!-- Top Destinations Section -->
+  <section id="top-destinations">
+    <h2>Top Nomad-Friendly Cities</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="bali.jpg" alt="Bali, Indonesia" />
+        <h3>Bali, Indonesia</h3>
+        <p>Affordable cost, tropical weather, and co-working spaces.</p>
+      </div>
+      <div class="card">
+        <img src="lisbon.jpg" alt="Lisbon, Portugal" />
+        <h3>Lisbon, Portugal</h3>
+        <p>Great weather, strong internet, and vibrant community.</p>
+      </div>
+      <div class="card">
+        <img src="thailand.jpg" alt="Chiang Mai, Thailand" />
+        <h3>Chiang Mai, Thailand</h3>
+        <p>Low cost of living, peaceful lifestyle, digital hubs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Digital Nomad Life. All rights reserved.</p>
+    <p><a href="mailto:contact@nomadlife.com">contact@nomadlife.com</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    $(document).ready(function () {
+      $(".scroll-text").hide().fadeIn(2000);
+
+      // Carousel logic
+      let current = 0;
+      const images = $(".carousel img");
+      const total = images.length;
+
+      setInterval(() => {
+        images.eq(current).removeClass("active");
+        current = (current + 1) % total;
+        images.eq(current).addClass("active");
+      }, 4000);
+
+      // Smooth scroll for navigation
+      $('nav a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top - 60
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

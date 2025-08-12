@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiang Mai, Thailand - Digital Nomad Destination</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+      color: #333;
+    }
+    nav {
+      background: #2c3e50;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .carousel {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+      opacity: 1;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="digitaltourMain.html">Home</a>
+    <a href="destination.html">Destinations</a>
+   
+  </nav>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="/images/4.jpg" alt="Chiang Mai 1" class="active">
+      <img src="/images/5.jpg" alt="Chiang Mai 2">
+      <img src="/images/6.jpg" alt="Chiang Mai 3">
+    </div>
+
+    <h1>Chiang Mai, Thailand</h1>
+    <p>Chiang Mai is a favorite destination for digital nomads thanks to its peaceful atmosphere, low cost of living, and abundance of cafes and co-working spaces. It offers a blend of traditional Thai culture and modern amenities, making it a perfect balance for remote work and exploration.</p>
+
+    <h2>Highlights for Digital Nomads:</h2>
+    <ul>
+      <li>Extremely affordable lifestyle</li>
+      <li>Fast and reliable internet</li>
+      <li>Friendly local and expat community</li>
+      <li>Safe and walkable city</li>
+      <li>Great local cuisine and street food</li>
+    </ul>
+
+    <h2>Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0876898248315!2d98.97926391445784!3d18.79639198721448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a68e1cf3e3f%3A0x1be36c1b2f70b99e!2sChiang%20Mai!5e0!3m2!1sen!2sth!4v1623312980659!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <footer>
+    <p>© 2025 Digital Nomad Life. All rights reserved.</p>
+    <p><a href="mailto:contact@nomadlife.com" style="color: #fff; text-decoration: underline;">contact@nomadlife.com</a></p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      const images = $('.carousel img');
+      let current = 0;
+      setInterval(() => {
+        images.eq(current).removeClass('active');
+        current = (current + 1) % images.length;
+        images.eq(current).addClass('active');
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

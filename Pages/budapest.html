@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budapest, Hungary - Digital Nomad Life</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 100px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .carousel {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .info {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="#">Essentials</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Budapest, Hungary</h1>
+
+    <div class="carousel">
+      <img src="/images/7.jpg" alt="Budapest View" class="active">
+      <img src="/images/8.jpg" alt="Chain Bridge">
+      <img src="/images/9.jpg" alt="Parliament Building">
+    </div>
+
+    <div class="info">
+      <p>Budapest is a gem of Eastern Europe with a growing community of digital nomads. With beautiful architecture, excellent public transport, fast internet, and vibrant nightlife, it offers everything a nomad needs.</p>
+      <ul>
+        <li>Affordable living and coworking spaces</li>
+        <li>Efficient metro and tram network</li>
+        <li>Thermal baths and relaxing spas</li>
+        <li>Cafés and riverside work spots</li>
+      </ul>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10777.090154113742!2d19.0402353!3d47.4979122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc1e26d8b3f9%3A0xa8c9b1a89f65e3cb!2sBudapest%2C%20Hungary!5e0!3m2!1sen!2s!4v1687250280176!5m2!1sen!2s" allowfullscreen=""></iframe>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      let current = 0;
+      const images = $('.carousel img');
+      const total = images.length;
+
+      setInterval(() => {
+        images.eq(current).removeClass('active');
+        current = (current + 1) % total;
+        images.eq(current).addClass('active');
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

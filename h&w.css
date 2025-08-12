@@ -1,0 +1,128 @@
+nav {
+  position: fixed; /* Keeps the navbar at the top when you scroll */
+  top: 0;
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow below navbar */
+  z-index: 10; /* Keeps navbar above other content */
+}
+
+nav ul {
+  display: flex; /* Horizontal menu */
+  justify-content: center; /* Center menu items horizontally */
+  padding: 1rem;
+  margin: 0;
+  list-style: none; /* Removes bullets */
+  gap: 2rem; /* Space between menu items */
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none; /* No underline on links */
+  color: #2c3e50; /* Dark blue-ish text color */
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; 
+    background-image: url('Health\ and\ Well-Being.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: -1; 
+}
+
+.container-padding {
+    padding: 1.5rem;
+}
+@media (min-width: 768px) {
+    .container-padding {
+        padding: 2rem;
+    }
+}
+
+.section-card {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.98), rgba(245, 245, 245, 0.98)); /* Subtle white to light gray gradient */
+    border-radius: 1.25rem; 
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 5px 10px -5px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow */
+    padding: 2.5rem; 
+    margin-bottom: 2.5rem; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+.section-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 25px 40px -8px rgba(0, 0, 0, 0.2), 0 10px 15px -8px rgba(0, 0, 0, 0.08); /* Stronger shadow on hover */
+}
+
+.icon {
+    width: 3.5rem; 
+    height: 3.5rem;
+    flex-shrink: 0;
+}
+
+.header-bg {
+    background: linear-gradient(to right, #f97316, #ef4444, #f59e0b); 
+    color: white;
+    box-shadow: 0 6px 10px -3px rgba(0, 0, 0, 0.15);
+}
+.footer-bg {
+    background: linear-gradient(to right, #f59e0b, #ef4444, #f97316); 
+    color: white;
+    box-shadow: 0 -6px 10px -3px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #ffffff; 
+    font-weight: 800; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+}
+h2 {
+    color: #dc2626; 
+    font-weight: 700; 
+}
+h3 {
+    color: #b91c1c; 
+    font-weight: 600; 
+}
+.text-intro, .text-gray-700 {
+    color: #374151; 
+    line-height: 1.75; 
+}
+.download-button {
+    background: linear-gradient(to right, #10b981, #059669); 
+    color: #f9fbf9;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block; 
+    margin-top: 1rem;
+}
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #059669, #047857);
+}
+
+body {
+    padding-top: 80px; /* Adjust height so content starts below navbar */
+}

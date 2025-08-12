@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lisbon, Portugal - Digital Nomad Life</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #34495e;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Lisbon, Portugal</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="/images/1.jpg" class="active" alt="Lisbon City View">
+      <img src="/images/2.jpg" alt="Lisbon Street">
+      <img src="/images/3.jpg" alt="Lisbon Sunset">
+    </div>
+
+    <h2>Why Lisbon?</h2>
+    <p>Lisbon, the capital of Portugal, is a thriving hotspot for digital nomads. With beautiful weather, fast internet, a vibrant culture, and an ever-growing community of remote workers, Lisbon is the perfect destination for combining work with travel.</p>
+
+    <h3>Highlights for Digital Nomads:</h3>
+    <ul>
+      <li>Abundant coworking spaces and cafes</li>
+      <li>Affordable public transport</li>
+      <li>Access to beaches and historical sites</li>
+      <li>Great food and wine culture</li>
+    </ul>
+
+    <h3>Location</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.9313673023816!2d-9.142685684652273!3d38.73694697959961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331d7e1f097b%3A0x400ebbde49036a0!2sLisbon%2C%20Portugal!5e0!3m2!1sen!2spt!4v1600000000000!5m2!1sen!2spt" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll(".carousel img");
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+
+</html>

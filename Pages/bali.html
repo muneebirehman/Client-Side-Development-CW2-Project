@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bali, Indonesia - Digital Nomad Life</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header, footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bali, Indonesia</h1>
+    <p>Explore tropical paradise for remote work and adventure</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="carousel">
+    <img src="/images/10.jpg" alt="Bali Beach" class="active">
+    <img src="/images/11.jpg" alt="Ubud Rice Fields">
+    <img src="/images/12.jpg" alt="Bali Sunset">
+  </div>
+
+  <div class="content">
+    <h2>Why Bali?</h2>
+    <p>Bali is a top digital nomad destination thanks to its affordable lifestyle, tropical climate, and supportive coworking culture. Ubud and Canggu are hubs for remote workers offering beautiful surroundings and vibrant communities.</p>
+
+    <h2>Nomad Highlights</h2>
+    <ul>
+      <li>High-speed Wi-Fi and coworking spaces like Dojo Bali and Hubud</li>
+      <li>Affordable accommodations and local food</li>
+      <li>Friendly visa options for longer stays</li>
+      <li>Activities from surfing to yoga retreats</li>
+    </ul>
+
+    <h2>Map</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126767.43849169882!2d115.0920032!3d-8.4095178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd247606f76fb6f%3A0x3030bfbcaf770b0!2sBali!5e0!3m2!1sen!2sid!4v1661978146576!5m2!1sen!2sid"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <footer>
+    <p>© 2025 Digital Nomad Life. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      let index = 0;
+      const images = $('.carousel img');
+      const total = images.length;
+
+      function showNextImage() {
+        images.eq(index).removeClass('active');
+        index = (index + 1) % total;
+        images.eq(index).addClass('active');
+      }
+
+      setInterval(showNextImage, 3000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+/* --- Base Styles & Typography --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+nav {
+  position: fixed; /* Keeps the navbar at the top when you scroll */
+  top: 0;
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow below navbar */
+  z-index: 10; /* Keeps navbar above other content */
+}
+
+nav ul {
+  display: flex; /* Horizontal menu */
+  justify-content: center; /* Center menu items horizontally */
+  padding: 1rem;
+  margin: 0;
+  list-style: none; /* Removes bullets */
+  gap: 2rem; /* Space between menu items */
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none; /* No underline on links */
+  color: #2c3e50; /* Dark blue-ish text color */
+}
+
+
+:root {
+    --primary-color: #0077B6; /* A rich, modern blue */
+    --secondary-color: #00B4D8; /* A brighter blue for accents */
+    --accent-color: #90E0EF; /* A light, airy blue */
+    --text-color: #333333; /* Dark gray for readability */
+    --light-text-color: #ffffff; /* White for contrast */
+    --background-color: #F8F9FA; /* A very light gray */
+    --card-background: #ffffff;
+    --border-color: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.section-padded {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* --- Header & Footer --- */
+.main-header {
+    background: linear-gradient(rgba(0, 119, 182, 0.9), rgba(0, 180, 216, 0.9)), url('https://via.placeholder.com/1920x600.png?text=Digital+Nomad+Header') no-repeat center center/cover;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: backgroundPulse 15s infinite ease-in-out;
+}
+
+.header-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.main-footer {
+    background-color: var(--text-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* --- Buttons & Links --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* --- Laptop Showcase Section --- */
+.laptop-showcase {
+    background-color: var(--card-background);
+}
+
+.laptop-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.laptop-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33% - 2rem);
+    min-width: 300px;
+    text-align: center;
+    opacity: 0; /* Will be animated in with JS */
+    transform: translateY(20px);
+}
+
+.laptop-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.laptop-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- App Arsenal Section --- */
+.app-arsenal {
+    background-color: var(--background-color);
+}
+
+.app-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.app-card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: attr(data-description);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.app-card:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.app-card:hover .app-icon, .app-card:hover .app-name {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.app-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.app-name {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* --- Co-working Compendium Section --- */
+.coworking-compendium {
+    background-color: var(--card-background);
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #EFEFEF;
+}
+
+.accordion-header h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    color: var(--secondary-color);
+}
+
+.accordion-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px; /* A large value to ensure it expands fully */
+    padding: 1.5rem;
+}
+
+/* --- Connectivity Hub Section --- */
+.connectivity-hub {
+    background-color: var(--background-color);
+}
+
+.connectivity-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.connectivity-card {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: var(--light-text-color);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.2);
+    width: calc(33% - 2rem);
+    min-width: 280px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.connectivity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.connectivity-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 119, 182, 0.3);
+}
+
+.connectivity-card:hover::before {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.connectivity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Essential Gadget Guide Section --- */
+.gadget-guide {
+    background-color: var(--card-background);
+}
+
+.gadget-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.gadget-card {
+    width: 300px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.gadget-card:hover {
+    transform: translateY(-5px);
+}
+
+.gadget-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 119, 182, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gadget-card:hover::before {
+    opacity: 1;
+}
+
+.gadget-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gadget-card:hover .gadget-image {
+    transform: scale(1.1);
+}
+
+.gadget-card h4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: var(--light-text-color);
+    background: rgba(0,0,0,0.5);
+    padding: 1rem 0;
+    margin: 0;
+    font-weight: 400;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gadget-card:hover h4 {
+    transform: translateY(0);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes backgroundPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .laptop-grid, .app-grid, .connectivity-grid, .gadget-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .laptop-card, .connectivity-card, .gadget-card {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .app-card {
+        width: calc(50% - 1.5rem);
+        min-width: 150px;
+    }
+}
